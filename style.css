@@ -1,0 +1,147 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Body styling for overall page layout and typography */
+body {
+  background-color: aquamarine;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive; /* Apply the retro font */
+  display: flex; /* Use flexbox to center content vertically */
+  flex-direction: column;
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  justify-content: center; /* Center main content vertically */
+  align-items: center; /* Center main content horizontally */
+  overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+}
+
+/* Main content container styling */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Space between title, game, and buttons */
+  padding: 1rem; /* Add some padding around the main content */
+  max-width: 90vw; /* Limit max width for larger screens to prevent stretching */
+  width: 100%; /* Ensure it takes full width on smaller screens */
+}
+
+/* Title styling */
+h1 {
+  color: darkblue;
+  font-size: 8vmin; /* Responsive font size based on viewport dimensions */
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Subtle text shadow for depth */
+}
+
+/* Game container for centering the board */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tic-Tac-Toe game board styling */
+.game {
+  height: 60vmin; /* Responsive height */
+  width: 60vmin; /* Responsive width */
+  display: grid; /* Use CSS Grid for a cleaner 3x3 layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+  gap: 1.5vmin; /* Responsive gap between cells */
+  border-radius: 1rem;
+  overflow: hidden; /* Ensures shadow/border doesn't bleed */
+  box-shadow: 0 0 2rem rgba(0,0,0,0.5); /* Stronger shadow for game board */
+  background-color: #212121; /* Dark background for game grid lines/gaps */
+}
+
+/* Individual Tic-Tac-Toe box styling */
+.box {
+  height: 100%; /* Fill grid cell */
+  width: 100%; /* Fill grid cell */
+  border-radius: 0.8rem; /* Slightly smaller border-radius for boxes */
+  border: none;
+  box-shadow: 0 0 0.8rem rgba(0,0,0,0.4) inset; /* Inner shadow for depth */
+  font-size: 8vmin; /* Responsive font size for X/O */
+  color: #FFD700; /* Default color for X/O (will be overridden by JS) */
+  background-color: #ffffc7; /* Light background for boxes */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease; /* Smooth transitions for hover */
+}
+
+/* Hover effect for clickable boxes */
+.box:hover:not(:disabled) {
+  background-color: #ffe082; /* Lighter hover effect */
+  transform: scale(1.02); /* Slight scale on hover */
+}
+
+/* Styling for disabled boxes */
+.box:disabled {
+  cursor: not-allowed;
+  opacity: 0.8; /* Slightly dim disabled boxes */
+}
+
+/* Container for the New Game and Reset Game buttons */
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: center;
+  gap: 1.5rem; /* Space between the two buttons */
+  margin-top: 2rem; /* Space above buttons */
+}
+
+/* Styling for both Reset and New Game buttons */
+#reset-btn,
+#new-btn {
+  padding: 1rem 2rem; /* More padding for larger, easier-to-tap buttons */
+  font-size: 1.5rem; /* Slightly smaller font for buttons for better fit */
+  background-color: #191913; /* Dark background */
+  color: white;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.4); /* Button shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for buttons */
+#reset-btn:hover,
+#new-btn:hover {
+  background-color: #333333; /* Darker hover */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 0.8rem 1.5rem rgba(0,0,0,0.6); /* Stronger shadow on hover */
+}
+
+/* Styling for the winner/tie message text */
+#msg {
+  color: #191913; /* Darker color for message text */
+  font-size: 5vmin;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* Subtle white shadow for contrast */
+}
+
+/* Styling for the message container that appears on win/tie */
+.msg-container {
+  position: absolute; /* Position over the game board */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 2rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 2rem rgba(0,0,0,0.6);
+  z-index: 100; /* Ensure it's on top of other elements */
+  display: flex; /* Use flex to center message text */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 50vmin; /* Ensure it's large enough for content */
+  text-align: center;
+}
+
+/* Class to hide the message container */
+.hide {
+  display: none;
+}

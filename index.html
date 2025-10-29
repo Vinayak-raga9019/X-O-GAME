@@ -1,0 +1,42 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe Game</title>
+  <!-- Add a favicon for a more polished look -->
+  <link rel="icon" href="https://placehold.co/32x32/aquamarine/darkblue?text=XO" type="image/x-icon">
+  <!-- Link to Google Fonts (e.g., "Press Start 2P" for a retro game feel, or "Inter" for modern) -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <main>
+    <h1>Tic-Tac-Toe</h1>
+    <!-- Move msg-container and msg inside main for better semantic structure -->
+    <div class="msg-container hide">
+      <p id="msg">Winner</p>
+    </div>
+
+    <div class="container">
+      <div class="game">
+        <!-- Add aria-label for accessibility for screen readers -->
+        <button class="box" aria-label="Tic Tac Toe cell 1"></button>
+        <button class="box" aria-label="Tic Tac Toe cell 2"></button>
+        <button class="box" aria-label="Tic Tac Toe cell 3"></button>
+        <button class="box" aria-label="Tic Tac Toe cell 4"></button>
+        <button class="box" aria-label="Tic Tac Toe cell 5"></button>
+        <button class="box" aria-label="Tic Tac Toe cell 6"></button>
+        <button class="box" aria-label="Tic Tac Toe cell 7"></button>
+        <button class="box" aria-label="Tic Tac Toe cell 8"></button>
+        <button class="box" aria-label="Tic Tac Toe cell 9"></button>
+      </div>
+    </div>
+    <div class="buttons-container"> <!-- New container for buttons for better layout control -->
+      <button id="reset-btn">Reset Game</button>
+      <button id="new-btn">New Game</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
